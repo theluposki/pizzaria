@@ -9,6 +9,8 @@ const router = VueRouter.createRouter({
   routes,
 });
 
+localStorage.setItem("paths", JSON.stringify([]))
+
 const app = Vue.createApp({
   components: {
     Headers,
