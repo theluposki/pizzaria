@@ -71,7 +71,6 @@ body {
 
 .headers .logo {
   display: flex;
-  background: red;
   align-items: center;
   justify-content: center;
   font-size: 1.5em;
