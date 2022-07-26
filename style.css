@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none
+}
+
+:root {
+  --white: #fafafa;
+  --dark: #212121;
+  --silver: #777777;
+}
+
+html,
+body {
+  font-family: "Nunito", sans-serif;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  font-size: 16px;
+  color: var(--dark);
+  background: var(--white);
+}
+
+#app {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  min-width: 100%;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+a {
+  color: var(--dark);
+}
+
+a.nav-link {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+a.nav-link i {
+  margin-right: 5px;
+}
+
+a.nav-link span {
+  font-weight: 600;
+}
+
+a.active-link {
+  transition: all ease-in-out .4s;
+  background: var(--dark);
+  color: var(--white);
+}
+
+#app .title {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 3.4rem;
+}
