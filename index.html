@@ -6,26 +6,14 @@
       <link rel="icon" type="image/svg" href="favicon.svg">
       <link rel="stylesheet" type="text/css" href="style.css">
       <script src="https://unpkg.com/akar-icons-fonts"></script>
-      <title>Document</title>
+      <title>MyReb | Pizzaria</title>
     </head>
     <body>
       <div id="app">
-
-        <nav class="nav">
-            <router-link to="/" class="nav-link" exact-active-class="active-link" exact>
-              <i class="ai-home"></i>
-              <span>Home</span>
-            </router-link>
-            &nbsp;&nbsp;&nbsp;
-            <router-link to="/about" class="nav-link" exact-active-class="active-link" exact>
-              <i class="ai-info"></i>
-              <span>About</span>
-            </router-link>
-        </nav>
-
-        <h1 class="title">{{ title }}</h1>
+        <Headers></Headers>
 
         <router-view class="main"></router-view>
+        <Navigation></Navigation>
       </div>
 
       <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
