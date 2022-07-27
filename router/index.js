@@ -1,7 +1,10 @@
 import { Home } from "../views/Home.js"
-import { About } from "../views/About.js"
+import { Menu } from "../views/Menu.js"
+import { Cart } from "../views/Cart.js"
+
 
 export const routes = [
   { path: "/", component: Home },
-  { path: "/about", component: About },
+  { path: "/menu", component: Menu },
+  { path: "/cart", component: Cart },
 ];

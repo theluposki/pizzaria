@@ -4,10 +4,10 @@ export const Headers = {
   <div class="headers">
     <div class="headers-nav">
       <button v-if=" $route.path === '/' ">
-        <i class="ai-home"></i>
+        <i class="fa-solid fa-house"></i>
       </button>
       <button v-else @click="getPaths()">
-        <i class="ai-arrow-left"></i>
+        <i class="fa-solid fa-arrow-left-long"></i>
       </button>
     </div>
 
@@ -26,7 +26,7 @@ export const Headers = {
   </div>
   `,
   mounted(){
-    
+
   },
   methods: {
     getPaths() {
