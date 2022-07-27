@@ -1,7 +1,9 @@
 export const Home  = {
   template:
   `
-  <h1>Home</h1>
+  <div>
+    <h1 class="title-page">Home</h1>
+  </div>
   `,
   mounted(){
     console.log(this.$route.path)

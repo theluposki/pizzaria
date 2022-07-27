@@ -1,7 +1,17 @@
 export const Menu  = {
   template:
   `
-  <h1>Cardápio</h1>
+  <div class="menu">
+    <h1 class="title-page">Cardápio</h1>
+    <div class="panel">
+      <div class="panel-group">
+        <input type="search" placeholder="Pesquisar sabor"/>
+        <button>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </div>
+  </div>
   `,
   mounted(){
     this.setPaths()
