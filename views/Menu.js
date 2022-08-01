@@ -19,7 +19,7 @@ export const Menu  = {
     </div>
 
     <ul class="list">
-      <li class="list-item" v-for="(item, index) in list" :key="index">
+      <li class="list-item" v-for="(item, index) in $store.state.menu" :key="index">
 
         <div class="item-img">
           <img :src="item.img" alt="imagem do produto." />
@@ -38,11 +38,13 @@ export const Menu  = {
           <h3>{{ formatCurrency(item.price) }}</h3>
 
           <div class="increments">
-            <button @click="decrement()">
+            <button v-if="$store.state.cart[index]" @click="decrement(item)">
               <i class="fa-solid fa-minus"></i>
             </button>
-            <span>{{ valorIncrement }}</span>
-            <button @click="increment()">
+
+            <span v-if="$store.state.cart[index]">{{ $store.state.cart[index].qtd || 0 }}</span>
+            <span v-else>0</span>
+            <button @click="increment(item)">
               <i class="fa-solid fa-plus"></i>
             </button>
           </div>
@@ -68,15 +70,21 @@ export const Menu  = {
     likeFavorite(){
       this.like = !this.like
     },
-    decrement() {
-      if(this.valorIncrement !== 0) {
-        this.valorIncrement--
-      }
+    decrement(item) {
+      this.$store.commit("removeItemCart", item)
     },
-    increment(){
-      if(this.valorIncrement >= 0) {
-        this.valorIncrement++
+    increment(item){
+      let obj = {
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        likes: item.likes,
+        img:item.img,
+        ingredients: item.ingredients,
+        qtd: 1,
+        createAt: item.createAt
       }
+      this.$store.commit("addItemCart", obj)
     },
     formatCurrency(value) {
       return currency(value)
