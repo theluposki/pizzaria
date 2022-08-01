@@ -115,6 +115,7 @@ body {
   align-items: center;
   padding: 0 20px;
   box-shadow: 0 0 3px var(--dark);
+  background-color: var(--white);
 }
 
 a {
