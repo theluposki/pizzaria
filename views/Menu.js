@@ -23,6 +23,10 @@ export const Menu  = {
 
         <div class="item-img">
           <img :src="item.img" alt="imagem do produto." />
+          <button @click="likeFavorite()" class="item-favorite">
+            <i v-if="like" class="fa-solid fa-heart"></i>
+            <i v-else class="fa-regular fa-heart"></i>
+          </button>
         </div>
 
         <div class="item-details">
@@ -53,6 +57,7 @@ export const Menu  = {
     return {
       search: null,
       list: menu,
+      like: false,
       valorIncrement: 0
     }
   },
@@ -60,11 +65,18 @@ export const Menu  = {
     this.setPaths()
   },
   methods: {
+    likeFavorite(){
+      this.like = !this.like
+    },
     decrement() {
-      this.valorIncrement--
+      if(this.valorIncrement !== 0) {
+        this.valorIncrement--
+      }
     },
     increment(){
-      this.valorIncrement++
+      if(this.valorIncrement >= 0) {
+        this.valorIncrement++
+      }
     },
     formatCurrency(value) {
       return currency(value)

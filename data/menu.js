@@ -3,6 +3,7 @@ export const menu = [
     id: crypto.randomUUID(),
     title: "Mussarela",
     price: 54.00,
+    likes: 0,
     img: "assets/img/pizza-mussarela.jpeg",
     ingredients: [
       "500 g de queijo de mussarela",
@@ -16,6 +17,7 @@ export const menu = [
     id: crypto.randomUUID(),
     title: "Calabresa",
     price: 51.99,
+    likes: 10,
     img: "assets/img/pissa-calabresa.webp",
     ingredients: [
       "2 colheres de sopa de molho de tomate",
