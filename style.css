@@ -150,6 +150,7 @@ a.active-link {
 .main {
   margin: 70px 0;
   background-color: #F0F1F3;
+  min-height: 100%;
 }
 
 .title-page {
@@ -224,6 +225,8 @@ input:focus {
   display: flex;
   gap: 10px;
   width: 100%;
+  max-width: 400px;
+  min-width: 340px;
   height: 200px;
   background-color: var(--white);
   margin-bottom: 10px;
@@ -274,7 +277,7 @@ input:focus {
 
 .item-details h2 {
   text-align: center;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .item-details > span {
@@ -285,8 +288,8 @@ input:focus {
 
 .item-details h3 {
   text-align: center;
-  margin: 10px 0;
-  font-size: 1.8em;
+  margin: 8px 0;
+  font-size: 1.4em;
 }
 
 .increments {
@@ -315,4 +318,14 @@ input:focus {
   justify-content: center;
   align-items: center;
   font-size: 1.2em;
+}
+
+@media only screen and (min-width: 780px) {
+  .list {
+    display: flex;
+  }
+
+  .list-item {
+    margin-right: 20px;
+  }
 }
