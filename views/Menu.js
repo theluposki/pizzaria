@@ -16,6 +16,13 @@ export const Menu  = {
         </button>
       </div>
 
+      <div class="panel-total">
+          <h2>{{  formatCurrency($store.getters.saldoCart) }}</h2>
+          <router-link to="/cart" class="btn-shopping">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>2x</span>
+          </router-link>
+      </div>
     </div>
 
     <ul class="list">

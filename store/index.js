@@ -50,5 +50,12 @@ export const store = Vuex.createStore({
 
         }
       },
+    },
+    getters: {
+      saldoCart(state) {
+        return state.cart.reduce((total, item) => {
+          return total += (item.price * item.qtd)
+        }, 0)
+      }
     }
 })
