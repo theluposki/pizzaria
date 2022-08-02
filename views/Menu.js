@@ -38,11 +38,11 @@ export const Menu  = {
           <h3>{{ formatCurrency(item.price) }}</h3>
 
           <div class="increments">
-            <button v-if="$store.state.cart[index]" @click="decrement(item)">
+            <button v-if="selectItemToCart(item.id)" @click="decrement(item)">
               <i class="fa-solid fa-minus"></i>
             </button>
 
-            <span v-if="$store.state.cart[index]">{{ $store.state.cart[index].qtd || 0 }}</span>
+            <span v-if="selectItemToCart(item.id)">{{ selectItemToCart(item.id) }}</span>
             <span v-else>0</span>
             <button @click="increment(item)">
               <i class="fa-solid fa-plus"></i>
@@ -72,6 +72,11 @@ export const Menu  = {
     },
     decrement(item) {
       this.$store.commit("removeItemCart", item)
+    },
+    selectItemToCart(id){
+      let current = this.$store.state.cart.find(item => item.id === id)
+
+      if(current) return current.qtd
     },
     increment(item){
       let obj = {
